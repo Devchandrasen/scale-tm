@@ -4,6 +4,8 @@ This repository contains the implementation for the NeurIPS-format paper:
 
 **SCALE-TM: Leakage-Audited All-Flow Forecasting Benchmarks for Internet Traffic Matrices**
 
+Repository URL: https://github.com/Devchandrasen/scale-tm
+
 The project studies reproducible Internet traffic-matrix forecasting on public OD-pair datasets. The main contribution is an evaluation and reproducibility benchmark: causal preprocessing, strong persistence/calibrated baselines, all-flow reporting, blocked chronological folds, compact modern neural controls, paired bootstrap deltas, and explicit negative stress cases.
 
 ## What Is Included
@@ -124,4 +126,3 @@ Under blocked all-flow Protocol D:
 - GEANT: N-BEATS-Small is best, `38.68` WAPE; SCALE-TM is explicitly reported as a negative case.
 
 The paper does not claim unconditional state of the art. It argues that public traffic-matrix forecasting needs strong calibrated baselines, causal preprocessing, all-flow reporting, modern neural controls, paired tests, and negative stress cases before larger topology-specific models can be credited with genuine gains.
-
