@@ -1,0 +1,70 @@
+{
+  "config": {
+    "sample_rows": 2880,
+    "datasets": [
+      "Abilene",
+      "CERNET",
+      "GEANT"
+    ],
+    "lookback_hours": 6.0,
+    "horizon_hours": 1.0,
+    "stride_hours": 1.0,
+    "train_end": 0.7,
+    "val_end": 0.8,
+    "test_end": 1.0,
+    "batch_size": 512,
+    "epochs": 2,
+    "patience": 2,
+    "learning_rate": 0.001,
+    "hidden": 48,
+    "seed": 42,
+    "bootstrap_samples": 250,
+    "ensemble_step": 0.1,
+    "blocked_folds": true,
+    "output_prefix": "allflow_neural_blocked",
+    "results_dir": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results",
+    "figures_dir": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/figures"
+  },
+  "device": "cpu",
+  "runtime_seconds": 2192.3478231430054,
+  "outputs": {
+    "results": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results/allflow_neural_blocked.csv",
+    "summary": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results/allflow_neural_blocked_summary.csv",
+    "paired_deltas": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results/allflow_neural_blocked_paired_deltas.csv",
+    "paired_delta_summary": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results/allflow_neural_blocked_paired_deltas_summary.csv",
+    "figure": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/figures/allflow_neural_blocked_wape.png"
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_end": 0.6,
+      "val_end": 0.7,
+      "test_end": 0.8
+    },
+    {
+      "fold": 2,
+      "train_end": 0.7,
+      "val_end": 0.8,
+      "test_end": 0.9
+    },
+    {
+      "fold": 3,
+      "train_end": 0.8,
+      "val_end": 0.9,
+      "test_end": 1.0
+    }
+  ],
+  "notes": [
+    "All OD columns are included for every requested dataset.",
+    "Use --blocked-folds for the three blocked chronological folds used in the strong-review Protocol D.",
+    "PatchTST-Small uses patch tokenization plus a Transformer encoder, not a linear patch surrogate.",
+    "N-BEATS-Small uses stacked backcast/forecast residual blocks.",
+    "TimesNet-Small uses periodized 2D convolution blocks over fixed horizon-derived periods.",
+    "N-HiTS-Small uses hierarchical pooling plus interpolated forecast heads.",
+    "GraphAttention-Small uses matrix-level self-attention across all OD-flow nodes.",
+    "All-flow WRTCN computes wavelet trend and residual channels causally inside each lookback window.",
+    "SCALE-TM no-WRTCN ensemble and Uniform candidate ensemble are reported as ensemble ablations.",
+    "Paired deltas bootstrap shared target end timestamps and report baseline minus SCALE-TM WAPE.",
+    "Constant training flows are guarded by forcing normalized predictions to zero for every model."
+  ]
+}

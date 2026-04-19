@@ -1,0 +1,84 @@
+{
+  "config": {
+    "raw_csv": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/data/raw/Abilene-OD_pair.csv",
+    "figures_dir": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/figures",
+    "results_dir": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results",
+    "sample_rows": 8064,
+    "top_flows": 12,
+    "lookback": 72,
+    "horizon": 12,
+    "stride": 3,
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "batch_size": 256,
+    "epochs": 18,
+    "patience": 5,
+    "learning_rate": 0.001,
+    "seed": 42
+  },
+  "device": "cpu",
+  "split_summary": {
+    "train_windows": 22296,
+    "val_windows": 4836,
+    "test_windows": 4800,
+    "selected_flows": [
+      "OD_12-9",
+      "OD_9-12",
+      "OD_6-3",
+      "OD_12-2",
+      "OD_8-3",
+      "OD_12-3",
+      "OD_12-5",
+      "OD_2-12",
+      "OD_8-12",
+      "OD_9-3",
+      "OD_8-5",
+      "OD_4-3"
+    ],
+    "train_cut_row": 5644,
+    "val_cut_row": 6854,
+    "wavelet_features": "computed causally inside each lookback window"
+  },
+  "training_notes": {
+    "Damped persistence": {
+      "alpha_mean": -0.2095833271741867,
+      "alpha_min": -0.4350000023841858,
+      "alpha_max": 0.05999999865889549
+    },
+    "Compact LSTM": {
+      "best_val_huber": 0.07335007190704346,
+      "epochs_run": 18.0,
+      "final_train_huber": 0.07078183338094193
+    },
+    "Residual TCN (no wavelet)": {
+      "best_val_huber": 0.06896267831325531,
+      "epochs_run": 10.0,
+      "final_train_huber": 0.06413086440653454
+    },
+    "Wavelet-Residual TCN": {
+      "best_val_huber": 0.067909374833107,
+      "epochs_run": 14.0,
+      "final_train_huber": 0.06092317078889464
+    },
+    "Proposed WRTCN-GB Ensemble (HistGradientBoosting=0.10, Ridge lags=0.10, Residual TCN (no wavelet)=0.05, Wavelet-Residual TCN=0.75)": {
+      "validation_WAPE": 10.597076416015625,
+      "Damped persistence": 0.0,
+      "HistGradientBoosting": 0.1,
+      "Ridge lags": 0.1,
+      "Residual TCN (no wavelet)": 0.05,
+      "Wavelet-Residual TCN": 0.75,
+      "Compact LSTM": 0.0
+    }
+  },
+  "best_model": {
+    "MAE": 22719.140625,
+    "RMSE": 150680.625,
+    "WAPE": 15.976469039916992,
+    "sMAPE": 12.756922721862793,
+    "WAPE_CI95_low": 14.285811614990234,
+    "WAPE_CI95_high": 17.456558513641358,
+    "model": "Proposed WRTCN-GB Ensemble (HistGradientBoosting=0.10, Ridge lags=0.10, Residual TCN (no wavelet)=0.05, Wavelet-Residual TCN=0.75)"
+  },
+  "persistence_wape_reduction_percent": 7.825013606815094,
+  "runtime_seconds": 833.7383577823639
+}

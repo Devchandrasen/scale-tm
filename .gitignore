@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Local data
+data/raw/*.csv
+data/processed/
+
+# LaTeX build products
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+
+# Earlier local manuscript drafts not used by the NeurIPS paper
+paper/main.*
+paper/ieee_main.*
+
+# Earlier single-split neural outputs superseded by blocked Protocol D
+figures/allflow_neural_wape.png
+results/allflow_neural_benchmark*
+results/allflow_neural_paired*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

@@ -1,0 +1,2 @@
+rows,flows,train_rows,test_rows,normalization,per_flow_alpha_mean,per_flow_alpha_min,per_flow_alpha_max
+2016,144,1612,404,global min-max range over the 2016 matrices,-0.15434027777777773,-0.495,0.20999999999999996

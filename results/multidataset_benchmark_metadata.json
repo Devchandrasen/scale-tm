@@ -1,0 +1,47 @@
+{
+  "config": {
+    "sample_rows": 2880,
+    "lookback_hours": 6.0,
+    "horizon_hours": 1.0,
+    "stride_hours": 1.0,
+    "ridge_alpha": 1.0,
+    "alpha_grid_size": 81,
+    "ensemble_step": 0.1,
+    "bootstrap_samples": 300,
+    "seed": 42,
+    "results_dir": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results",
+    "figures_dir": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/figures"
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_end": 0.6,
+      "val_end": 0.7,
+      "test_end": 0.8
+    },
+    {
+      "fold": 2,
+      "train_end": 0.7,
+      "val_end": 0.8,
+      "test_end": 0.9
+    },
+    {
+      "fold": 3,
+      "train_end": 0.8,
+      "val_end": 0.9,
+      "test_end": 1.0
+    }
+  ],
+  "runtime_seconds": 48.350831508636475,
+  "outputs": {
+    "results": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results/multidataset_benchmark.csv",
+    "summary": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/results/multidataset_benchmark_summary.csv",
+    "figure": "/home/dr-chandrasen-pandey/internet_traffic_forecasting_research/figures/multidataset_wape.png"
+  },
+  "notes": [
+    "All OD columns are included, including diagonal OD_i-i columns.",
+    "Lookback and horizon are defined in hours, then converted to dataset-specific steps.",
+    "Train, validation, and test windows are separated by target end time to avoid future-target leakage.",
+    "Global linear baselines are fit without intercepts or calendar channels so zero-valued OD flows remain zero-preserving; the seasonal naive baseline is the explicit calendar control."
+  ]
+}
