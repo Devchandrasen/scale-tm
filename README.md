@@ -106,16 +106,7 @@ The blocked Protocol D run used all OD flows from Abilene, CERNET, and GEANT, th
 - `results/summary_metrics.csv`: Protocol B summary.
 - `figures/allflow_neural_blocked_wape.png`: blocked Protocol D figure.
 
-## Build The Paper
 
-The paper uses the NeurIPS LaTeX style included in `paper/`.
-
-```bash
-cd paper
-latexmk -pdf -interaction=nonstopmode neurips_main.tex
-```
-
-The compiled PDF is written to `paper/neurips_main.pdf`.
 
 ## Main Result Summary
 
@@ -125,4 +116,4 @@ Under blocked all-flow Protocol D:
 - CERNET: SCALE-TM neural ensemble is best, `14.62` WAPE.
 - GEANT: N-BEATS-Small is best, `38.68` WAPE; SCALE-TM is explicitly reported as a negative case.
 
-The paper does not claim unconditional state of the art. It argues that public traffic-matrix forecasting needs strong calibrated baselines, causal preprocessing, all-flow reporting, modern neural controls, paired tests, and negative stress cases before larger topology-specific models can be credited with genuine gains.
+
